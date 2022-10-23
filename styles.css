@@ -21,7 +21,7 @@ body {
 }
 
 .mainnav {
-    background: linear-gradient(90deg, #023e8a, #020338);  
+    background: linear-gradient(90deg, #023e8a, #020338); 
     height: 100px;
     width: 100%;
 }
@@ -60,7 +60,22 @@ body {
     display: none;
 }
 
+.checkbutton-two {
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    float: right;
+    line-height: 80px; 
+    margin-right: 40px; 
+    cursor: pointer;
+    display: none;
+    z-index: 20;
+}
+
 #check {
+    display: none;
+}
+
+#checktwo {
     display: none;
 }
 
@@ -121,6 +136,8 @@ body {
     background-color: #b0b5bf;
 }
 
+/* Right content */
+
 .mainbody {
     display: flex;
     width: 100%;
@@ -179,11 +196,30 @@ body {
     list-style: none;
     display: block;
     transition: 0.5s;
+    
 }
 
 .dropdown-two {
     position: relative;
     transition: 0.5s;
+}
+
+.sideul .dropdown-one .dropdown-menu-one  .dropdown-two .third-level {
+    background-color: yellow;
+    color: red;
+}
+
+.sideul .dropdown-one .dropdown-menu-one  .dropdown-two .third-level:hover {
+    background-color: lightyellow;
+}
+
+
+.sideul .dropdown-one .dropdown-menu-one .second-level {
+    background-color: green;
+}
+
+.sideul .dropdown-one .dropdown-menu-one .second-level:hover {
+    background-color: lightgreen;
 }
 
 .dropdown-two:hover .dropdown-menu-two {
@@ -207,12 +243,29 @@ body {
     transition: 0.5s;
 }
 
+.downarrow {
+    font-size: 14px;
+    opacity: 0;
+}
+
+/* Footer */
+footer {
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(90deg, #023e8a, #020338); 
+}
+
 
 /* Media Querys */
 
 @media (max-width: 952px) {
     .checkbutton {
         display: block;
+    }
+
+    .checkbutton-two {
+        display: block;
+        z-index: 3;
     }
     
     .mainnav ul {
@@ -230,7 +283,7 @@ body {
     .mainnav ul li {
         display: block;
         margin: 50px 0;
-        line-height: 30px;
+        line-height: 10px;
         
     }
 
@@ -239,12 +292,47 @@ body {
         
     }
 
+    .sidebar {
+        left: -100%;
+        width: 100%;
+        position: absolute;
+        z-index: 3;
+    }
+
+    .sidenav ul {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: #adb5bd;
+        left: -200%;
+        text-align: center;
+        transition: all 0.5s;
+        z-index: 3;
+    }
+
+    .sidenav ul li {
+        display: block;
+        /* line-height: 30px; */
+    }
+
+    .sidenav .sideul li a {
+        font-size: 14px;
+    }
+
     a:hover {
         background: none;
         color: #212529;
     }
 
     #check:checked ~ ul {
+        left: 0;
+    }
+
+    #checktwo:checked ~ .mainbody .sidebar {
+        left: 0;
+    }
+
+    #checktwo:checked ~ .mainbody .sidebar .sideul {
         left: 0;
     }
 
@@ -259,6 +347,33 @@ body {
    .logo {
     width: 30%;
    }
+
+   .dropdown-menu-one,
+   .dropdown-menu-two {
+    position: relative;
+    top: 0;
+    z-index: 4;
+    width: 100%;
+    transition: 0.5s;
+    left: 0%;
+   }
+   .dropdown-one {
+    /* position: relative; */
+    transition: 0.5s;
+   }
+   .mainbody {
+    flex-direction: column;
+   }
+   .contentholder {
+    width: 100%;
+   }
+
+   .downarrow {
+    font-size: 12px;
+    opacity: 1;
+   }
+
+   
 }
 
 
